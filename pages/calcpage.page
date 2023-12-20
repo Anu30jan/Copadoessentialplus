@@ -1,0 +1,28 @@
+<apex:page controller="Calculations">
+    <apex:form >
+        <apex:pageBlock title="calculations">	
+            <apex:pageBlockSection title="calculate Area and perimeter" columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter length"/>
+                    <apex:inputText value="{!Length}"/>                   
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter Breadth"/>
+                    <apex:inputText value="{!Breadth}"/>                   
+                </apex:pageBlockSectionItem>
+                <apex:selectRadio label="Enter the choice" value="{!Choice}">
+                    <apex:selectOption itemLabel="Area" itemvalue="A"/>
+                    <apex:selectOption itemLabel="perimeter" itemvalue="P"/>                                   
+                </apex:selectRadio>
+                <apex:pageBlockSectionItem >
+                	<apex:commandButton value="Calculate" action="{!maincalc}"/>
+                	<apex:commandButton value="Reset" action="{!Reset}"/>
+                </apex:pageBlockSectionItem> 
+                <apex:pageBlockSectionItem >
+                      <apex:outputLabel value="Result"/>
+                      <apex:OutputText value="{!Result}"/>                  
+                </apex:pageBlockSectionItem>                              	
+            	</apex:pageBlockSection>      
+        </apex:pageBlock>       
+    </apex:form>
+</apex:page>

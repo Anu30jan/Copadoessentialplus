@@ -1,0 +1,21 @@
+<apex:page sidebar="false" showHeader="false">
+    
+   <h1> LoggedIn user :</h1> {!$User.FirstName} {!$User.LastName}  <p> </p>
+    <h1> Email Id :</h1>  {!$User.Email}<p> </p>
+        
+
+    <apex:image url="https://images.apollo247.in/cms/2022-01/apollo%20hospital%20gandhi%20nagar%20ahmedabad.PNG" height="300" width="800"/><p> </p>
+      
+    <apex:image value="{!$Resource.AH}" height="300" width="300"/> <p>  </p>
+    
+    
+   <!-- <apex:iframe src="https://www.apollohospitals.com/"/>
+    <apex:iframe src="https://learnandbuild-dev-ed--c.develop.vf.force.com/apex/Mysecondpage?core.apexpages.request.devconsole=1" scrolling="true" frameborder="true"/>
+ -->
+    <apex:outputLink value="https://learnandbuild-dev-ed--c.develop.vf.force.com/apex/Mysecondpage?core.apexpages.request.devconsole=1" style="font-style: italic;font-size:40px;color:Tomato">
+  <h1>  Click here to visit VF page 2  </h1>
+           
+    </apex:outputLink>
+
+
+</apex:page>

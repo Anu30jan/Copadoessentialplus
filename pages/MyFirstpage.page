@@ -1,0 +1,29 @@
+<apex:page sidebar="false" showHeader="false" standardController="Account">
+   		<apex:pageBlock title="General Information"> 
+       		<apex:pageBlockSection title="Section1B1">
+      		<apex:outputField value="{!Account.name}"/>
+           <apex:outputField value="{!Account.fax}"/>
+           <apex:outputField value="{!Account.Industry}"/>
+           <apex:outputField value="{!Account.Phone}"/>
+           <apex:outputField value="{!Account.rating}"/>          
+       	</apex:pageBlockSection>
+       <apex:pageBlockSection title="Section2B1" columns="1">
+           <apex:relatedList list="Cases"/> 
+         	<apex:relatedList list="Opportunities"/> 
+            <apex:relatedList list="Contacts"/>
+       </apex:pageBlockSection>   
+        <apex:pageBlockSection title="Section3B1" >
+            <apex:pageBlockTable value="{!Account.Contacts}" var="ac">
+            	<apex:column value="{!ac.Firstname}"/> 
+                <apex:column value="{!ac.lastname}"/> 
+                <apex:column value="{!ac.Phone}"/> 
+                <apex:column value="{!ac.Email}"/>                 
+            </apex:pageBlockTable>
+       </apex:pageBlockSection> 
+    </apex:pageBlock>
+ <!--   
+     <apex:pageBlock title="Display detail page">   
+       <apex:detail/>
+    </apex:pageBlock>
+-->
+</apex:page>

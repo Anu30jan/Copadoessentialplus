@@ -1,0 +1,39 @@
+<apex:page sidebar="false" showHeader="false" standardController="Account" extensions="Extension_controller_eg" >
+  <apex:form >  
+	<apex:messages />      
+       <apex:pageBlock > 
+           <apex:pageBlockSection title="Account" columns="1">
+               <apex:inputField value="{!Account.name}"/>
+               <apex:inputField value="{!Account.fax}"/>
+               <apex:inputField value="{!Account.Industry}"/>
+               <apex:inputField value="{!Account.Phone}"/>
+               <apex:inputField value="{!Account.rating}"/>  
+               <apex:commandButton value="SaveSFDC" action="{!SAVE}"/>     
+               <apex:commandButton value="Savecustom" action="{!validateacc}"/>   
+           </apex:pageBlockSection>
+           
+             <apex:pageBlockSection title="calculate Area and perimeter" columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter length"/>
+                    <apex:inputText value="{!length}"/>                   
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Enter Breadth"/>
+                    <apex:inputText value="{!Breadth}"/>                   
+                </apex:pageBlockSectionItem>
+                <apex:selectRadio label="Enter the choice" value="{!choice}" >
+                    <apex:selectOption itemLabel="Area" itemvalue="A"/>
+                    <apex:selectOption itemLabel="perimeter" itemvalue="P"/>                                   
+                </apex:selectRadio>
+                <apex:pageBlockSectionItem >
+                	<apex:commandButton value="Calculate" action="{!maincalc}" />
+                	<apex:commandButton value="Reset" action="{!Reset}"/>
+                </apex:pageBlockSectionItem> 
+                <apex:pageBlockSectionItem >
+                      <apex:outputLabel value="Result"/>
+                      <apex:OutputText value="{!Result}" />                  
+                </apex:pageBlockSectionItem>                              	
+            	</apex:pageBlockSection>
+       </apex:pageBlock>        
+   </apex:form>
+</apex:page>

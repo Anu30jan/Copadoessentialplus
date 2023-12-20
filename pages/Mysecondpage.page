@@ -1,0 +1,44 @@
+<apex:page sidebar="false" showHeader="false" standardController="Account" >
+   <apex:tabPanel >
+       <apex:tab label="tab 1">
+			<apex:form >
+           		<apex:pageBlock title="Block1">
+                	<apex:pageBlockSection title="section 1" columns="1">
+                    	<apex:inputField value="{!Account.name}"/>
+                        <apex:inputField value="{!Account.Phone}"/>
+                        <apex:inputField value="{!Account.Rating}"/>
+                        <apex:inputField value="{!Account.Fax}"/>
+                        <apex:inputField value="{!Account.BillingCity}"/>
+                        <apex:inputSecret value="{!Account.name}"/>
+                        <apex:inputhidden value="{!Account.fax}"/>
+                    </apex:pageBlockSection>
+                    <apex:commandButton value="Click here to Save" action="{!SAVE}"/>
+                    <apex:commandLink value="save" action="{!SAVE}"/>
+                    
+                    <apex:selectRadio legendText="Select Courses" layout="pagedirection">
+                        <apex:selectOption itemLabel="Salesforce" itemValue="SFDC"/>
+                         <apex:selectOption itemLabel="SAP CRM" itemValue="SAP"/>
+                         <apex:selectOption itemLabel="JAVA programming" itemValue="java"/>
+                         <apex:selectOption itemLabel="machine learning" itemValue="AI"/>                        
+                    </apex:selectRadio>
+                    
+                    <apex:selectCheckboxes legendText="Select Courses">                   
+                        <apex:selectOption itemLabel="Salesforce" itemValue="SFDC"/>
+                         <apex:selectOption itemLabel="SAP CRM" itemValue="SAP"/>
+                         <apex:selectOption itemLabel="JAVA programming" itemValue="java"/>
+                         <apex:selectOption itemLabel="machine learning" itemValue="AI"/>                        
+                   </apex:selectCheckboxes>    
+
+					<apex:selectList label="Select Courses" multiselect="true">
+						 <apex:selectOption itemLabel="Salesforce" itemValue="SFDC"/>
+                         <apex:selectOption itemLabel="SAP CRM" itemValue="SAP"/>
+                         <apex:selectOption itemLabel="JAVA programming" itemValue="java"/>
+                         <apex:selectOption itemLabel="machine learning" itemValue="AI"/> 
+                    </apex:selectList>                                  
+                </apex:pageBlock>
+            </apex:form>	                      
+       </apex:tab>                     
+      <apex:tab label="tab 2"/>
+      <apex:tab label="tab 3"/>       
+   </apex:tabPanel>
+</apex:page>
